@@ -1,0 +1,9 @@
+﻿Zwieze jest glodne kiedy przetrawilo co najmniej tyle co zjadlo
+
+Napisz klase Pies implementujaca interfejs IZwierze
+
+Napisz klase Kon implementujaca interfejs IZwierze i IPojazd
+Kon zuzywa jedna jednostke jedzenia aby przejechac 100 kilometrow
+"Tankowanie" konia rzuca wyjatek NotSupportedException
+"Paliwo" konia zwraca 0
+Jezeli kon jest glodny to nie moze jechac

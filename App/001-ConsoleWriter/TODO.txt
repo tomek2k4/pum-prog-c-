@@ -1,0 +1,2 @@
+﻿Należy stworzyć klasę App.ConsoleWriter implementującą interfejs IWriter która
+wypisuje obiekt na konsolę.

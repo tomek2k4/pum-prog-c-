@@ -1,0 +1,1 @@
+﻿Napisz klasę implementującą RationalHelper implementujaca IRationalHelper

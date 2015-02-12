@@ -1,0 +1,44 @@
+﻿Należy utworzyć następujące klasy:
+Enum Paliwo z wartościami
+- Benzyna
+- Olej
+- Gaz
+- NieDotyczy
+
+Interfejs IPojazd z 
+Metodami:
+- Jedz(decimal kilometry)
+- Tankuj(decimal ilos, Paliwo paliwo)
+Wlasciwosciami tylko do odczytu:
+- decimal Przejechane
+- decimal Paliwo
+
+Klasa "Rower" implementujacym Interfejs IPojazd
+Rower moze przejechac dowolna odleglosc bez tankowania
+Wywolanie metody tankuj na rowerze powinno wolac NotSupportedException
+Wartos wlasciwosc Paliwo powinno zawsze zwracac 0
+Posiada publiczny bezparametrowy konstruktor
+
+Klasa abstrakcyjna PojazdMechaniczny implementujaca Interfejs IPojazd
+Publiczny Konstruktor: PojazdMechaniczny(Paliwo paliwo, decimal spalanieNa100)
+jezeli spalanieNa100 <= 0 -> ArgumentException()
+Metoda Jedz powinna przejechac 'kilometry' kilometrow chyba ze zabraknie paliwa. Wtedy tyle na ile starczy paliwa
+Metoda Tankuj powinna wywolac ArgumentException gdy tankujemy zle paliwo
+Wlasciwosci powinny pokazywac odpowiednie liczby paliwa i przejechanych kilometrow (po konstrukcji obiektow obie wartosci powinny byc rowne 0)
+
+Klasa Autobus dziedziczy po PojazdMechaniczny.
+Konstruktor bezparametrowy
+Spala 20 litrow oleju na 100
+
+Interfejs IKlimatyzowany
+Klimatyzacja: wlasciwosc typu bool, mowiaca czy klimatyzacja jest wlaczona.
+
+Klasa Osobowka dziedziczy po PojazdMechaniczny i implementuje IKlimatyzowany
+Konstruktor przyjmuje decimal spalanieNa100 oraz decimal pojemnoscBaku. Osobowka zawsze uzywa benzyny
+Osobowka definiuje wlasciwosci:
+Pojemnosc (tylko do odczytu): maksymalna liczba jednostek paliwa ktora mozna zatankowac (tankowanie powyzej tej wartosci nie powinno nic zmieniac)
+Klimatyzacja (read/write): wlasciwosc typu bool, mowiaca czy klimatyzacja jest wlaczona. jesli tak, spalanie na 100 zwiekszone jest o 1 jednostke
+
+Wszystkie typy powinny byc w namespacie App i powinny byc publiczne
+Nalezy odpowiednia zaplanowac virtualizacje pol aby mozna bylo korzystac z pojazdow za pomoca interfejsu
+

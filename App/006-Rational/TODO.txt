@@ -1,0 +1,6 @@
+﻿Zaimplementuj strukture Rational reprezentujaca liczby wymierne
+Strukturua ta nie powinna byc mutowalna
+Powinna przeladowac operatory rzutowania explicite na Int16 Int32 i Int64, implicit z Int16, Int32 i Int64
+Oraz operatory
+unarne: + i -
+binarne: +, -, *, /, <, >, <=, >=, ==, !=
