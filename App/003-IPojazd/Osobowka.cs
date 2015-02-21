@@ -8,15 +8,25 @@ namespace App
 {
     public class Osobowka : PojazdMechaniczny, IKlimatyzowany
     {
-        bool _klimatyzacjaWlaczona;
+        bool    _klimatyzacjaWlaczona;
+        decimal _pojemnosc; 
 
         public Osobowka(decimal spalanieNa100, decimal pojemnoscBaku) 
             : base(App.Paliwo.Benzyna,spalanieNa100)
         {
-
+            _pojemnosc = pojemnoscBaku;
         }
 
-        public bool JestWlaczona
+        public new void Tankuj(decimal ilosc, Paliwo paliwo)
+        {
+            if( Paliwo + ilosc > _pojemnosc)
+            {
+                ilosc = _pojemnosc - Paliwo;
+            }
+            base.Tankuj(ilosc, paliwo);
+        }
+
+        public bool Klimatyzacja
         {
             get
             {
@@ -25,7 +35,20 @@ namespace App
             set
             {
                 _klimatyzacjaWlaczona = value;
+                if(value == true)
+                {
+                    base._spalanieNa100 += 1;
+                }
+                else
+                {
+                    base._spalanieNa100 -= 1;
+                }
             }
+        }
+
+        public decimal Pojemnosc
+        {
+            get { return _pojemnosc; }
         }
     }
 }

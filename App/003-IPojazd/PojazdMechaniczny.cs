@@ -9,7 +9,7 @@ namespace App
     public abstract class PojazdMechaniczny : IPojazd
     {
         App.Paliwo _rodzajPaliwa;
-        private decimal _spalanieNa100;
+        protected decimal _spalanieNa100;
         private decimal _iloscPaliwa = 0;
         private decimal _przejechane = 0;
 
@@ -28,15 +28,15 @@ namespace App
         {
 
             decimal spalonePaliwo = _spalanieNa100 * kilometry / 100;
-            if(spalonePaliwo>IloscPaliwa)
+            if(spalonePaliwo>Paliwo)
             {
-                Przejechane += IloscPaliwa * 100 / _spalanieNa100;
-                IloscPaliwa = 0;
+                Przejechane += Paliwo * 100 / _spalanieNa100;
+                Paliwo = 0;
             }
             else
             {
                 Przejechane += kilometry;
-                IloscPaliwa -= spalonePaliwo;
+                Paliwo -= spalonePaliwo;
             }
             
         }
@@ -50,7 +50,7 @@ namespace App
             }
             else
             {
-                IloscPaliwa += ilosc;
+                Paliwo += ilosc;
             }
         }
 
@@ -60,16 +60,10 @@ namespace App
             private set { _przejechane = value; }
         }
 
-        public decimal IloscPaliwa
-        {
-            get { return _iloscPaliwa; }
-            private set {_iloscPaliwa = value;}
-        }
-
         public decimal Paliwo
         {
             get { return _iloscPaliwa; }
-            private set { _iloscPaliwa = value; }
+            private set {_iloscPaliwa = value;}
         }
 
 

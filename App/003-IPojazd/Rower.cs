@@ -17,7 +17,7 @@ namespace App
             set { _przejechane = value; }
         }
 
-        public decimal IloscPaliwa
+        public decimal Paliwo
         {
             get { return 0; }
         }

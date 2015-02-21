@@ -8,6 +8,6 @@ namespace App
 {
     public interface IKlimatyzowany
     {
-        bool JestWlaczona { get; set; }
+        bool Klimatyzacja { get; set; }
     }
 }

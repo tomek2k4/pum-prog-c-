@@ -10,7 +10,7 @@ namespace App
     {
 
         decimal Przejechane { get;}
-        decimal IloscPaliwa  {get;}
+        decimal Paliwo  {get;}
 
         void Jedz(decimal kilometry);
         void Tankuj(decimal ilos, Paliwo paliwo);
